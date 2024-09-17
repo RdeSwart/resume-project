@@ -16,10 +16,10 @@ function userInformationHTML(user) {
 };
 
 function repoInformationHTML(repos) {
-    if(repos.length === 0) {
+    if (repos.length === 0) {
         return `<div class="clearfix repo-list">No repos!</div>`;
     }
-    var listItemsHTML = repos.map(function(repo) {
+    var listItemsHTML = repos.map(function (repo) {
         return `<li>
         <a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`
     });
@@ -32,6 +32,8 @@ function repoInformationHTML(repos) {
 
 
 function fetchGitHubInformation(event) {
+    $("#gh-user-data").html("");
+    $("#gh-repo-data".html(""));
 
     var username = $("#gh-username").val();
     if (!username) {
@@ -70,3 +72,5 @@ function fetchGitHubInformation(event) {
 //) .then (
 //      function to display it in the gh-user-data div
 //      unless we get an error!)
+
+$(document).ready(fetchGitHubInformation);
